@@ -1,0 +1,39 @@
+<ul><!-- general list -->
+
+	<% @classrooms.each do |classroom| %>
+	  <li><!-- classroom -->
+	  	Classroom: <%= classroom.name %>
+      
+      <br/>
+      <br/>
+
+	  	<ul><!-- subjects and teachers -->
+        <li>
+        	Subjects and teachers
+          <ul>
+						<% report_array = Assignment.report_by_classroom classroom.id %>
+		        <% report_array.each do |r|%>
+		          <li><b><%= r.subject.name %></b> : <%= r.teacher.name %></li>
+		        <% end %>
+          </ul>
+        </li>
+      </ul><!-- subjects and teachers -->
+            
+      <ul><!-- students -->
+      	<li>
+      		Students
+          <ul>
+						<% classroom.students.each do |student|%>
+						  <li><%= student.name %></li>
+						<% end %>
+          </ul>
+      	</li>
+      </ul><!-- students -->
+
+	  </li><!-- classroom --> 
+	  <br/>
+	<% end %>	
+
+</ul><!-- general list -->
+
+

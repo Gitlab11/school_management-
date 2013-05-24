@@ -1,6 +1,13 @@
 class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
+
+  def report
+    @classrooms = Classroom.all
+    @teachers = Teacher.all
+    @students = Student.all
+  end
+
   def index
     @assignments = Assignment.all
 
