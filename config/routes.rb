@@ -1,19 +1,11 @@
 School::Application.routes.draw do
   resources :students
-
-
   resources :teachers
-
-
   resources :subjects
-
-
   resources :assignments
-
-
   resources :classrooms
 
-
+  root :to => 'classrooms#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
