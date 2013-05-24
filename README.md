@@ -1,8 +1,6 @@
 School Management
 ==========================
 
-<h1>System to manage a school</h1>
-
 This project cover: 
 <ul>
   <li>has_many through relationship</li>
