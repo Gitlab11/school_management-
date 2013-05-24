@@ -1,9 +1,14 @@
 School Management
 ==========================
 
-<h1>System to manage a School</h1>
+<h1>System to manage a school</h1>
 
-This project cover has_many through relationship and nested forms and attributes.
+This project cover: 
+<ul>
+  <li>has_many through relationship</li>
+  <li>nested forms and attributes.</li>
+  <li>validate uniqueness in memory<li>
+</ul>
 
 <h2>Functionalities:</h2>
 <ul>
@@ -24,8 +29,8 @@ This project cover has_many through relationship and nested forms and attributes
     <ul>
       <li>All the sdutents grouped by classrooms</li>
       <li>Classroom's subjects and their teachers</li>
-      <li>All the classrooms which the teacher are assigned<li>
-      <li>All the subjects which the teacher are assigned<li>
+      <li>All the classrooms which the teacher are assigned</li>
+      <li>All the subjects which the teacher are assigned</li>
     </ul>
   </li>  
 </ul>
