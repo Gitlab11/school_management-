@@ -14,7 +14,7 @@ School Management
     Cruds avaible for:
     <ul>
       <li>Classrooms</li>
-      <li>Teachers</li>
+      <li>Teachers</li> 
       <li>Students</li>
       <li>Subjects</li>
     </ul>
