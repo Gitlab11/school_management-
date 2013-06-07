@@ -8,7 +8,7 @@
   <div class="control-group">
     <%= f.label :classroom_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :classroom_id, :class => 'number_field' %>
+      <%= f.collection_select :classroom_id, Classroom.all, :id, :name %>
     </div>
   </div>
 
