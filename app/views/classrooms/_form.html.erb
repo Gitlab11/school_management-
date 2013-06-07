@@ -1,46 +1,57 @@
-<%= form_for(@classroom) do |f| %>
-  <% if @classroom.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@classroom.errors.count, "error") %> prohibited this classroom from being saved:</h2>
-
-      <ul>
-      <% @classroom.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @classroom, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
   </div>
 
+  
 
-
-  <h2>Assignments</h2>
-  <div class="items">
-    <%= f.nested_fields_for :assignments do |f| %>
-      <fieldset class="item">
+    <h3>Assignments</h3>
+    <div class="items">
+      <%= f.nested_fields_for :assignments do |f| %>
         
-        <%= f.label :subject_id %>
-        <%#= f.text_field :subject_id %>
-        <%= f.collection_select :subject_id, Subject.all, :id, :name, :prompt => "Select" %>
+        <fieldset class="item">
 
-        <%= f.label :teacher_id %>
-        <%#= f.text_field :teacher_id %>
-        <%= f.collection_select :teacher_id, Teacher.all, :id, :name, :prompt => "Select" %>
+          <div class="well">
+          
+            <div class="control-group">
+              <%= f.label :subject_id, :class => 'control-label' %>
+              <div class="controls">
+                <%= f.collection_select :subject_id, Subject.all, :id, :name, :prompt => "Select" %>
+              </div><!-- controls -->
+            </div><!--control group-->
 
-        <a href="#" class="remove">remove</a>
+            <div class="control-group">
+              <%= f.label :teacher_id, :class => 'control-label' %>
+              <div class="controls">
+                <%= f.collection_select :teacher_id, Teacher.all, :id, :name, :prompt => "Select" %>
+              </div><!-- controls -->
+            </div><!--control group-->
 
-        <%= f.hidden_field :id %>
-        <%= f.hidden_field :_destroy %>
-      </fieldset>
-    <% end %>
-  </div>
-  <a href="#" class="add">add assignment</a>
+            <div class="form-actions">
+              <a href="#" class="remove">
+                <button class="btn btn-danger">Remove</button>
+              </a>  
+            </div><!--form-actions-->
 
-  <div class="actions">
-    <%= f.submit %>
+          </div>  
+
+          <hr />
+          <%= f.hidden_field :id %>
+          <%= f.hidden_field :_destroy %>
+        </fieldset>
+      <% end %>
+    </div><!--items-->
+
+
+  <div class="form-actions">
+    <a href="#" class="add assignment">
+      <button class="btn">add assignment</button>
+    </a>
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                classrooms_path, :class => 'btn' %>
   </div>
 <% end %>
