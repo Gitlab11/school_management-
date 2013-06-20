@@ -4,7 +4,7 @@ School Management
 <h2>This project covers Ruby on Rails:</h2> 
 <ul>
   <li>has_many through relationship</li>
-  <li>nested forms and attributes.</li>
+  <li>validate uniqueness in memory (validates_nested_uniqueness gem)</li>
   <li>validate uniqueness in memory</li>
 </ul>
 
