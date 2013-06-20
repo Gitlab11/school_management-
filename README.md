@@ -19,9 +19,9 @@ School Management
       <li>Subjects</li>
     </ul>
   </li>
-  <li>Teacher can teachs in more than one classroom, and in more than one subject in the same classroom</li>
+  <li>Teacher can teachs in more than one classroom, andmore than one subject in the same classroom</li>
   <li>Classroom can't have duplicated subjects</li>
-  <li>In classroom's create, i may inform which subjects the classroom has, and the teacher for each subject</li>
+  <li>In classroom's creation, is possible inform which subjects the classroom has, and the teacher for each subject</li>
   <li>
     Reports avaible for:
     <ul>
